@@ -1,4 +1,5 @@
 ﻿using UnityEngine ;
+using TMPro;
 
 public class Player : MonoBehaviour {
    [SerializeField] private float moveSpeed ;
@@ -6,18 +7,21 @@ public class Player : MonoBehaviour {
    [SerializeField] private float cubeMaxPosX ;
    [Space]
    [SerializeField] private TouchSlider touchSlider ;
+   [SerializeField] private TMP_Text score_text ;
 
    private Cube mainCube ;
 
+   private int score = 0;
+
    private bool isPointerDown ;
-  // private bool canMove ;
+   private bool canMove ;
    private Vector3 cubePos ;
 
    private void Start () {
       SpawnCube () ;
-     // canMove = true ;
-
-      // Listen to slider events:
+      canMove = true ;
+      score_text.text = $"Score: {score.ToString()}";
+      
       touchSlider.OnPointerDownEvent += OnPointerDown ;
       touchSlider.OnPointerDragEvent += OnPointerDrag ;
       touchSlider.OnPointerUpEvent += OnPointerUp ;
@@ -44,20 +48,24 @@ public class Player : MonoBehaviour {
    }
 
    private void OnPointerUp () {
-      if (isPointerDown ) {   //&& canMove
+      if (isPointerDown && canMove) { 
          isPointerDown = false ;
-       //  canMove = false ;
+         canMove = false ;
 
-         // Push the cube:
+         
          mainCube.CubeRigidbody.AddForce (Vector3.forward * pushForce, ForceMode.Impulse) ;
 
          Invoke ("SpawnNewCube", 0.3f) ;
+
+
+         score += mainCube.CubeNumber;
+         score_text.text = $"Score: {score.ToString()}";
       }
    }
 
    private void SpawnNewCube () {
       mainCube.IsMainCube = false ;
-     // canMove = true ;
+      canMove = true ;
       SpawnCube () ;
    }
 
@@ -65,8 +73,8 @@ public class Player : MonoBehaviour {
       mainCube = CubeSpawner.Instance.SpawnRandom () ;
       mainCube.IsMainCube = true ;
 
-     
       cubePos = mainCube.transform.position ;
+      
    }
 
    private void OnDestroy () {

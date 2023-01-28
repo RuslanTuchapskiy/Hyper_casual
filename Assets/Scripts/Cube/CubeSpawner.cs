@@ -2,7 +2,7 @@
 using System.Collections.Generic ;
 
 public class CubeSpawner : MonoBehaviour {
-   // Singleton class
+   
    public static CubeSpawner Instance ;
 
    Queue<Cube> cubesQueue = new Queue<Cube> () ;
@@ -13,7 +13,7 @@ public class CubeSpawner : MonoBehaviour {
    [SerializeField] private Color[] cubeColors ;
 
    [HideInInspector] public int maxCubeNumber ;
-   // in our case it's 4096 (2^12)
+  
 
    private int maxPower = 12 ;
 
