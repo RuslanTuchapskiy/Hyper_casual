@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 440136995851799174}
   - component: {fileID: 449305387955344936}
   - component: {fileID: 468049574813177253}
+  - component: {fileID: 4160151896709519084}
+  - component: {fileID: 5963642415782432041}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -101,6 +103,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4160151896709519084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462722733845391138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187c3251ce9ea1049bdf82e189f4744d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbersText:
+  - {fileID: 5922823936899876410}
+  - {fileID: 3378402579347243235}
+  - {fileID: 7047707706791266054}
+  - {fileID: 5978497281360934347}
+  - {fileID: 8675688824713818793}
+  - {fileID: 547034228349667755}
+  CubeID: 0
+  CubeColor: {r: 0, g: 0, b: 0, a: 0}
+  CubeNumber: 0
+  CubeRigidbody: {fileID: 0}
+  IsMainCube: 0
+--- !u!65 &5963642415782432041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462722733845391138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2375286623048495465
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +152,7 @@ GameObject:
   - component: {fileID: 2049021455659381395}
   - component: {fileID: 7047707706791266054}
   m_Layer: 0
-  m_Name: Number (2)
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +361,7 @@ GameObject:
   - component: {fileID: 7109024816447161846}
   - component: {fileID: 5978497281360934347}
   m_Layer: 0
-  m_Name: Number (3)
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +705,7 @@ GameObject:
   - component: {fileID: 6314037055098809815}
   - component: {fileID: 8675688824713818793}
   m_Layer: 0
-  m_Name: Number (4)
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,7 +877,7 @@ GameObject:
   - component: {fileID: 2345385026768443118}
   - component: {fileID: 3378402579347243235}
   m_Layer: 0
-  m_Name: Number (1)
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1010,7 +1049,7 @@ GameObject:
   - component: {fileID: 453735039552607182}
   - component: {fileID: 547034228349667755}
   m_Layer: 0
-  m_Name: Number (5)
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
