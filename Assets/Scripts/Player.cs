@@ -8,9 +8,12 @@ public class Player : MonoBehaviour {
    [Space]
    [SerializeField] private TouchSlider touchSlider ;
    [SerializeField] private TMP_Text score_text ;
+    [Space]
+    [SerializeField] private Game_UI game_UI ;
+    [SerializeField] private GameOver_UI gameOver_UI ;
 
    private Cube mainCube ;
-
+   private Game_UI game_ui;
    private int score = 0;
 
    private bool isPointerDown ;
@@ -18,6 +21,8 @@ public class Player : MonoBehaviour {
    private Vector3 cubePos ;
 
    private void Start () {
+      game_UI.gameObject.SetActive(true);
+      gameOver_UI.gameObject.SetActive(false);
       SpawnCube () ;
       canMove = true ;
       score_text.text = $"Score: {score.ToString()}";
